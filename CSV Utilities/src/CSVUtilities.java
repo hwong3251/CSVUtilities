@@ -22,6 +22,7 @@ public class CSVUtilities {
 		try(BufferedReader br = Files.newBufferedReader(pathToFile, StandardCharsets.US_ASCII))
 		{
 			String line = br.readLine();
+			
 			while(line != null)
 			{
 				String[]attributes = line.split(",");
@@ -56,7 +57,10 @@ public class CSVUtilities {
 	public ArrayList<String>getDataString(int column)
 	{
 		ArrayList<String>data = new ArrayList<>();
-		data.add(e)
+		for(int i = column; i < CSVData.size(); i += numColumns)
+		{
+			data.add(CSVData.get(i));
+		}
 		return data;
 	}
 
