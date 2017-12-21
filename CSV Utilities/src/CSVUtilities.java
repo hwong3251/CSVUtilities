@@ -68,7 +68,7 @@ public class CSVUtilities {
 	}
 	
 	//Return an ArrayList with the data converted to Integer
-	public List<Integer>getDataInt(int column)
+	public ArrayList<Integer>getDataInt(int column)
 	{
 		ArrayList<Integer>data = new ArrayList<>();
 		for(int i = column; i < CSVData.size(); i += numColumns)
@@ -80,7 +80,7 @@ public class CSVUtilities {
 	}
 	
 	//Return an ArrayList with the data converted to Double
-		public List<Double>getDataDouble(int column)
+		public ArrayList<Double>getDataDouble(int column)
 		{
 			ArrayList<Double>data = new ArrayList<>();
 			for(int i = column; i < CSVData.size(); i += numColumns)

@@ -8,6 +8,8 @@ public class Runner {
 
 		ArrayList<String>header = test1.getColumnHeaders();
 		ArrayList<String>data = test1.getDataString(1);
+		ArrayList<Integer>data2 = test1.getDataInt(1);
+		ArrayList<Double>data3 = test1.getDataDouble(1);
 		
 		/*
 		for(String n : test1.CSVData)
@@ -24,6 +26,14 @@ public class Runner {
 		for (String y : data)
 		{
 			System.out.println(y);
+		}
+		for (Integer q : data2)
+		{
+			System.out.println(q);
+		}
+		for (Double w : data3)
+		{
+			System.out.println(w);
 		}
 		
 	}
