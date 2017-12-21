@@ -22,17 +22,20 @@ public class CSVUtilities {
 		try(BufferedReader br = Files.newBufferedReader(pathToFile, StandardCharsets.US_ASCII))
 		{
 			String line = br.readLine();
+			String[]test = line.split(",");
+			numColumns = test.length;
 			
 			while(line != null)
 			{
 				String[]attributes = line.split(",");
+				//Attribute array has different length if the value is missing
 				for(int i = 0; i < attributes.length; i++)
 				{
 					CSVData.add(attributes[i]);
 				}
 
 				line = br.readLine();
-				numColumns = attributes.length;
+				
 			}	
 		}
 		catch (IOException ioe)
@@ -63,5 +66,29 @@ public class CSVUtilities {
 		}
 		return data;
 	}
+	
+	//Return an ArrayList with the data converted to Integer
+	public List<Integer>getDataInt(int column)
+	{
+		ArrayList<Integer>data = new ArrayList<>();
+		for(int i = column; i < CSVData.size(); i += numColumns)
+		{
+			int n = Integer.parseInt(CSVData.get(i));
+			data.add(n);
+		}
+		return data;
+	}
+	
+	//Return an ArrayList with the data converted to Double
+		public List<Double>getDataDouble(int column)
+		{
+			ArrayList<Double>data = new ArrayList<>();
+			for(int i = column; i < CSVData.size(); i += numColumns)
+			{
+				double n = Double.parseDouble(CSVData.get(i));
+				data.add(n);
+			}
+			return data;
+		}
 
 }
