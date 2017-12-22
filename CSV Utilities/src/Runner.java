@@ -11,7 +11,6 @@ public class Runner {
 		ArrayList<Integer>data2 = test1.getDataInt(1);
 		ArrayList<Double>data3 = test1.getDataDouble(1);
 		
-		/*
 		for(String n : test1.CSVData)
 		{
 			System.out.println(n);
@@ -22,15 +21,20 @@ public class Runner {
 			System.out.println(x);
 		}
 		
-		*/
 		for (String y : data)
 		{
 			System.out.println(y);
 		}
+		
+		System.out.println("Integer Data");
 		for (Integer q : data2)
 		{
 			System.out.println(q);
 		}
+		
+		System.out.println("---------------------------------------------");
+		
+		System.out.println("Double Data");
 		for (Double w : data3)
 		{
 			System.out.println(w);

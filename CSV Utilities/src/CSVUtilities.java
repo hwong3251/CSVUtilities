@@ -70,25 +70,39 @@ public class CSVUtilities {
 	//Return an ArrayList with the data converted to Integer
 	public ArrayList<Integer>getDataInt(int column)
 	{
-		ArrayList<Integer>data = new ArrayList<>();
+		ArrayList<Integer>IntData = new ArrayList<>();
 		for(int i = column; i < CSVData.size(); i += numColumns)
 		{
-			int n = Integer.parseInt(CSVData.get(i));
-			data.add(n);
+			Integer n = 0;
+			try {
+				n = Integer.parseInt(this.CSVData.get(i));
+			}
+			catch(NumberFormatException e) {
+				i++;
+				continue;
+			}
+			IntData.add(n);
 		}
-		return data;
+		return IntData;
 	}
 	
 	//Return an ArrayList with the data converted to Double
 		public ArrayList<Double>getDataDouble(int column)
 		{
-			ArrayList<Double>data = new ArrayList<>();
+			ArrayList<Double>DoubleData = new ArrayList<>();
 			for(int i = column; i < CSVData.size(); i += numColumns)
 			{
-				double n = Double.parseDouble(CSVData.get(i));
-				data.add(n);
+				Double n = 0.0;
+				try {
+					n = Double.parseDouble(this.CSVData.get(i));
+				}
+				catch(NumberFormatException e) {
+					i++;
+					continue;
+				}
+				DoubleData.add(n);
 			}
-			return data;
+			return DoubleData;
 		}
 
 }
